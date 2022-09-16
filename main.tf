@@ -14,7 +14,7 @@ module web {
   cluster           = "Cluster"
   primary_datastore = "vsanDatastore"
   networks = {
-    "${module.networks.public_networks[0]}" : "dhcp"
+    "${module.networks.public_networks}[0]" : "dhcp"
   }
   template = "go-tfc-agent-small"
 
