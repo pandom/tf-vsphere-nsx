@@ -15,21 +15,21 @@ module networks {
 
 }
 
-# module web {
-# 	depends_on = [
-# 		module.networks
-# 	]
-# 	source = "github.com/terraform-vsphere-modules/terraform-vsphere-virtual-machine"
-# 	count = var.web_machine_count
-# 	datacenter        = "Datacenter"
-#   cluster           = "Cluster"
-#   primary_datastore = "vsanDatastore"
-#   networks = {
-#     "${module.networks.public_networks[count.index]}" : "dhcp"
-#   }
-#   template = "go-tfc-agent-small"
+module web {
+	depends_on = [
+		module.networks
+	]
+	source = "github.com/terraform-vsphere-modules/terraform-vsphere-virtual-machine"
+	count = var.web_machine_count
+	datacenter        = "Datacenter"
+  cluster           = "Cluster"
+  primary_datastore = "vsanDatastore"
+  networks = {
+    "${module.networks.public_networks[count.index]}" : "dhcp"
+  }
+  template = "go-tfc-agent-small"
 
-# 	hostname = "web-${count.index}"
-# 	memory = 4096
+	hostname = "web-${count.index}"
+	memory = 4096
 
-# }
+}
