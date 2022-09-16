@@ -20,7 +20,7 @@ module web {
 		module.networks
 	]
 	source = "github.com/terraform-vsphere-modules/terraform-vsphere-virtual-machine"
-	count = 3
+	count = 1
 	datacenter        = "Datacenter"
   cluster           = "Cluster"
   primary_datastore = "vsanDatastore"
