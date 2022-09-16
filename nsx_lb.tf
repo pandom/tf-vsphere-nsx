@@ -1,5 +1,5 @@
 module "load_balancer" {
-	source = "../terraform-nsx-lb"
+	source = "github.com/grantorchard/terraform-nsxt-lb"
 
 	nsx_group_path = nsxt_policy_group.web
 }
