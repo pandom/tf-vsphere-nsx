@@ -7,18 +7,18 @@ module networks {
 
 }
 
-module web {
-	source = "github.com/terraform-vsphere-modules/terraform-vsphere-virtual-machine"
-	count = 1
-	datacenter        = "Datacenter"
-  cluster           = "Cluster"
-  primary_datastore = "vsanDatastore"
-  networks = {
-    "${module.networks.public_networks}[0]" : "dhcp"
-  }
-  template = "go-tfc-agent-small"
+# module web {
+# 	source = "github.com/terraform-vsphere-modules/terraform-vsphere-virtual-machine"
+# 	count = 1
+# 	datacenter        = "Datacenter"
+#   cluster           = "Cluster"
+#   primary_datastore = "vsanDatastore"
+#   networks = {
+#     "${module.networks.public_networks}[0]" : "dhcp"
+#   }
+#   template = "go-tfc-agent-small"
 
-	hostname = "web-${count.index}"
-	memory = 4096
+# 	hostname = "web-${count.index}"
+# 	memory = 4096
 
-}
+# }
