@@ -16,6 +16,9 @@ module networks {
 }
 
 module web {
+	depends_on = [
+		module.networks
+	]
 	source = "github.com/terraform-vsphere-modules/terraform-vsphere-virtual-machine"
 	count = 3
 	datacenter        = "Datacenter"
