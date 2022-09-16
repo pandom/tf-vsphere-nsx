@@ -1,6 +1,5 @@
 module networks {
   source  = "github.com/grantorchard/terraform-nsx-quickstart-module"
-  version = "0.0.1"
 
   private_subnets = [
     "10.0.3.0/28",
@@ -12,4 +11,5 @@ module networks {
     "10.0.3.64/28",
     "10.0.3.80/28"
   ]
+	environment = var.environment
 }
