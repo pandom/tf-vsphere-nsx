@@ -8,13 +8,13 @@ module networks {
 }
 
 module web {
-	source = "github.com/grantorchard/terraform-vsphere-module-virtual-machine"
+	source = "github.com/terraform-vsphere-modules/terraform-vsphere-virtual-machine"
 	count = 1
 	datacenter        = "Datacenter"
   cluster           = "Cluster"
   primary_datastore = "vsanDatastore"
   networks = {
-    module.networks.public_networks[0] : "dhcp"
+    "${module.networks.public_networks[0]}" : "dhcp"
   }
   template = "go-tfc-agent-small"
 
