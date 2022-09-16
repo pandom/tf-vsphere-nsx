@@ -4,3 +4,4 @@ variable "environment" {
 }
 
 variable "nsx_server" {}
+variable "vsphere_server" {}
