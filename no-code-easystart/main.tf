@@ -16,7 +16,7 @@ module web {
   cluster           = "Cluster"
   primary_datastore = "vsanDatastore"
   networks = {
-    "${data.terraform_remote_state.networks.public_networks[count.index]}" : "dhcp"
+    "${data.terraform_remote_state.networks.outputs.public_networks[count.index]}" : "dhcp"
   }
   template = "go-tfc-agent-small"
   
