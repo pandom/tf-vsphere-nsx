@@ -3,8 +3,8 @@ variable "environment" {
   default = "development"
 }
 
-variable "nsx_server" {}
-variable "vsphere_server" {}
+# variable "nsx_server" {}
+# variable "vsphere_server" {}
 
 variable "web_machine_count" {
   type    = number
