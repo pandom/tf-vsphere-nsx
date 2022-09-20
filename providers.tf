@@ -19,12 +19,12 @@ terraform {
 }
 
 provider "nsxt" {
-  host = var.nsx_server
+  #host = var.nsx_server
 }
 
 
 provider "vsphere" {
-  vsphere_server = var.vsphere_server
+  #vsphere_server = var.vsphere_server
   # Configuration options
 }
 
