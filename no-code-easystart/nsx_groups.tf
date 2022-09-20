@@ -1,4 +1,4 @@
-resource "nsxt_policy_group" "nodecode" {
+resource "nsxt_policy_group" "nocode" {
   display_name = "nocode"
   description  = "Terraform provisioned Group"
 
