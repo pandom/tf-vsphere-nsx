@@ -19,8 +19,7 @@ module web {
     "${data.terraform_remote_state.networks.outputs.public_networks[count.index]}" : "dhcp"
   }
   template = "go-tfc-agent-small"
-  
-	hostname = "web-${count.index}"
+	#hostname = "web-${count.index}"
 	memory = 4096
 
 }
