@@ -1,6 +1,6 @@
 # Terraform vSphere NSX
 
-This is an example deployment of a basic 'vSphere' landing zone
+This is an example deployment of a basic 'vSphere' landing zone on NSX. It includes basic services and network topologies accessible in the default routing domain.
 
 
 ### Topology
