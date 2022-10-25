@@ -18,6 +18,7 @@ module web {
   networks = {
     "${data.terraform_remote_state.networks.outputs.public_networks[count.index]}" : "dhcp"
   }
+  # This will clone an existing packer template registered in vCenter
   template = "go-tfc-agent-small"
 	#hostname = "web-${count.index}"
 	memory = 4096

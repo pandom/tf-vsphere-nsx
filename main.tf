@@ -27,6 +27,7 @@ module web {
   networks = {
     "${module.networks.public_networks[count.index]}" : "dhcp"
   }
+  # This will clone an existing packer template registered in vCenter
   template = "go-tfc-agent-small"
   
 	hostname = "web-${count.index}"
