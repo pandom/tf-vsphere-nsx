@@ -8,7 +8,7 @@ variable "environment" {
 
 variable "web_machine_count" {
   type    = number
-  default = 3
+  default = 1
 }
 
 variable "tfc_networks_workspace_name" {
