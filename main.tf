@@ -25,7 +25,8 @@ module web {
   cluster           = "Cluster"
   primary_datastore = "vsanDatastore"
   networks = {
-    "${module.networks.public_networks[count.index]}" : "dhcp"
+    #"${module.networks.public_networks[count.index]}" : "dhcp"
+    "${data.terraform_remote_state.networks.outputs.public_networks[count.index]}" : "dhcp"
   }
   # This will clone an existing packer template registered in vCenter
   template = "go-tfc-agent-small"
