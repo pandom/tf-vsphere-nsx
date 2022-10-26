@@ -7,20 +7,32 @@ This is an example deployment of a basic 'vSphere' landing zone on NSX. It inclu
 
 ```mermaid
 graph LR
-    A(T0 Router) -->|forwards tcp/4646| B(T1 Router)
-    subgraph topology[nsx_landing_zone_module]
+    A(T0 Router) -->|forwards| B(T1 Router)
+subgraph inf[Infrastructure]
+    vcva[vCenter]
+    nsx[NSX Manager]
+end
+subgraph topology[nsx_landing_zone_module]
+    F --- vm3
+    D --- vm1
+    E --- vm2
     B --> C[T1 Load Balancer]
     C --- D[segment-1]
     C --- E[segment-2]
     C --- F[segment-3]
-    F --- vm3
-    D --- vm1
-    E --- vm2
-    C -.->|forwards tcp/4646|vm2
-    C -.->|forwards tcp/4646|vm1
-
-    C -.->|forwards tcp/4646|vm3
+    subgraph vms[App1]
+    vm1
+    vm2
+    vm3
     end
+    C -.->|forwards|vm1
+    C -.->|forwards|vm2
+    C -.->|forwards|vm3 
+end
+subgraph p[Provider]
+    rtr[Upstream Network]
+    rtr---A
+end
 ```
 
 
